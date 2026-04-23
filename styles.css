@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+}
+
+#board-frame{
+    border: 1px solid black;
+    width: 960px;
+    height: 960px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+}
