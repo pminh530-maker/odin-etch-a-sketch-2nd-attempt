@@ -12,9 +12,8 @@ h1{
 }
 
 .cell {
+    flex: auto;
     box-sizing: border-box;
     border: 1px solid white;
     background-color: aqua;
-    width: 30px;
-    height: 30px;
 }
