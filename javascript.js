@@ -21,7 +21,7 @@ function createGrid(gridSize) {
             function generateRandomCellColor() {
                 let hexColorCharacters = '0123456789ABCDEF';
                 let newRandomCellColor = '#';
-                for(let i = 0; i < 8; i++) {
+                for(let i = 0; i < 6; i++) {
                     newRandomCellColor += hexColorCharacters[Math.floor(Math.random() * 16)]
                 }
                 return newRandomCellColor;
@@ -34,9 +34,9 @@ function createGrid(gridSize) {
                 }
             }
             
-            cell.addEventListener("mouseenter", (cell) => {
+            cell.addEventListener("mouseenter", () => {
                 cell.style.backgroundColor = generateRandomCellColor();
-                increaseOpacity(cell)
+                increaseOpacity(cell);
             });
         }
     }
