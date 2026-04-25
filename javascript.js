@@ -16,15 +16,28 @@ function createGrid(gridSize) {
             const cellSize =  960 / gridSize;
             cell.style.width = cellSize + 'px';
             cell.style.height = cellSize + 'px';
-            cell.addEventListener("mouseenter", function generateRandomCellColor() {
+            boardFrame.appendChild(cell);
+
+            function generateRandomCellColor() {
                 let hexColorCharacters = '0123456789ABCDEF';
                 let newRandomCellColor = '#';
                 for(let i = 0; i < 8; i++) {
                     newRandomCellColor += hexColorCharacters[Math.floor(Math.random() * 16)]
                 }
-                cell.style.backgroundColor = newRandomCellColor;
-            })
-            boardFrame.appendChild(cell)
+                return newRandomCellColor;
+            }
+
+            function increaseOpacity(cell) {
+                let currentOpacity = Number(cell.style.opacity);
+                if(currentOpacity < 1) {
+                    cell.style.opacity = currentOpacity + 0.1;
+                }
+            }
+            
+            cell.addEventListener("mouseenter", (cell) => {
+                cell.style.backgroundColor = generateRandomCellColor();
+                increaseOpacity(cell)
+            });
         }
     }
 }
